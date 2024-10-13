@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import { ReactNode } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -9,8 +10,12 @@ export const metadata = {
   description: "THE WEB AND OTHER ARCANE SPELLCRAFT, BY JAI PAWAR",
 };
 
-export default function RootLayout({ children }) {
-  let header = (
+interface RootLayoutProps {
+  children: ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
+  const header = (
     <header>
       <Link href={"/"}>
         <h1>Web Dev Musings</h1>
@@ -18,7 +23,7 @@ export default function RootLayout({ children }) {
     </header>
   );
 
-  let footer = (
+  const footer = (
     <footer>
       <p>
         Thank you for visiting <strong>Web Dev Musings</strong>!
