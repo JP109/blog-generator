@@ -12,7 +12,7 @@ export default function getPostMetadata(basePath) {
     const matterResult = matter(fileContents);
     return {
       title: matterResult.data.title,
-      featured_image: matterResult.data.featured_image,
+      featured_image: matterResult.data.featured_image || "/images/default.jpg",
       date: matterResult.data.date,
       read_time: matterResult.data.read_time,
       slug: filename.replace(".md", ""),
